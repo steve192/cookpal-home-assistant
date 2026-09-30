@@ -1,0 +1,84 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect Cookpal",
+        "description": "Create an API key in the Cookpal app under Settings > API keys and tick at least \"Read shopping lists\". Tick \"Add, tick off and remove items\" too if Home Assistant should change the list.",
+        "data": {
+          "url": "Server",
+          "api_key": "API key"
+        },
+        "data_description": {
+          "url": "The address of your Cookpal server. Keep the default unless you run your own.",
+          "api_key": "Starts with cpk_. Cookpal shows it only once, right after creating it."
+        }
+      },
+      "lists": {
+        "title": "Shopping lists",
+        "description": "Pick the lists to show as to-do lists. You can change this later.",
+        "data": {
+          "lists": "Lists"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Cookpal needs a new API key",
+        "description": "The API key for {url} no longer works: it was revoked, or the account can no longer sign in. Create a new key for the same account in the Cookpal app.",
+        "data": {
+          "api_key": "API key"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Could not reach a Cookpal server at this address.",
+      "invalid_auth": "The API key is not valid. It may have been revoked.",
+      "api_keys_disabled": "This Cookpal server does not accept API keys.",
+      "missing_scope": "The API key cannot read shopping lists. Create one with \"Read shopping lists\" ticked."
+    },
+    "abort": {
+      "already_configured": "This Cookpal account is already connected.",
+      "reauth_successful": "The new API key works.",
+      "wrong_account": "This API key belongs to a different Cookpal account."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Shopping lists",
+        "description": "Pick the lists to show as to-do lists.",
+        "data": {
+          "lists": "Lists"
+        }
+      }
+    },
+    "abort": {
+      "cannot_connect": "Could not reach Cookpal to read your lists. Try again later."
+    }
+  },
+  "entity": {
+    "todo": {
+      "default_list": {
+        "name": "Shopping list"
+      },
+      "household_default_list": {
+        "name": "{household} shopping list"
+      }
+    }
+  },
+  "exceptions": {
+    "auth_failed": {
+      "message": "Cookpal no longer accepts the API key. Set up a new one where Home Assistant asks for it."
+    },
+    "read_only": {
+      "message": "The API key may only read this list."
+    },
+    "update_failed": {
+      "message": "Cookpal could not save the change: {error}"
+    }
+  },
+  "issues": {
+    "list_gone": {
+      "title": "A Cookpal shopping list is gone",
+      "description": "A shopping list picked for {entry} was deleted, or you left the household it belonged to. Open the integration's options and pick your lists again."
+    }
+  }
+}
