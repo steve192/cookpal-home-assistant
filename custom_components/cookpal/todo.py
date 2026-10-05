@@ -1,4 +1,4 @@
-"""Each picked Cookpal shopping list as a to-do list."""
+"""Each picked CookPal shopping list as a to-do list."""
 
 from __future__ import annotations
 
@@ -52,8 +52,8 @@ class CookpalTodoList(CoordinatorEntity[CookpalListCoordinator], TodoListEntity)
         self._attr_unique_id = f"{entry.unique_id}_{coordinator.list_id}"
         self._attr_device_info = DeviceInfo(
             identifiers={(DOMAIN, str(entry.unique_id))},
-            name="Cookpal",
-            manufacturer="Cookpal",
+            name="CookPal",
+            manufacturer="CookPal",
             entry_type=DeviceEntryType.SERVICE,
         )
         if shopping_list.get("name"):

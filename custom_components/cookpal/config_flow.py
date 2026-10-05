@@ -1,4 +1,4 @@
-"""Connecting Home Assistant to a Cookpal account with an api key."""
+"""Connecting Home Assistant to a CookPal account with an api key."""
 
 from __future__ import annotations
 
@@ -46,7 +46,7 @@ async def _check_key(hass: HomeAssistant, url: str, api_key: str) -> tuple[Cookp
     except CookpalAuthError as error:
         raise CannotConnect("invalid_auth") from error
     except CookpalError as error:
-        LOGGER.debug("Cannot reach Cookpal at %s: %s", url, error)
+        LOGGER.debug("Cannot reach CookPal at %s: %s", url, error)
         raise CannotConnect("cannot_connect") from error
     if SCOPE_SHOPPING_READ not in key.get("scopes", []):
         raise CannotConnect("missing_scope")
@@ -114,7 +114,7 @@ class CookpalConfigFlow(ConfigFlow, domain=DOMAIN):
         """Which lists become to-do lists; the own default list is suggested."""
         if user_input is not None:
             return self.async_create_entry(
-                title=f"Cookpal ({self._owner})" if self._owner else "Cookpal",
+                title=f"CookPal ({self._owner})" if self._owner else "CookPal",
                 data=self._data,
                 options={CONF_LISTS: user_input[CONF_LISTS]},
             )

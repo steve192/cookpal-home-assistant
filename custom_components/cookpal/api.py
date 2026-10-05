@@ -1,4 +1,4 @@
-"""A small client for the parts of the Cookpal API an api key may use."""
+"""A small client for the parts of the CookPal API an api key may use."""
 
 from __future__ import annotations
 
@@ -10,7 +10,7 @@ REQUEST_TIMEOUT = aiohttp.ClientTimeout(total=15)
 
 
 class CookpalError(Exception):
-    """Anything that went wrong talking to Cookpal."""
+    """Anything that went wrong talking to CookPal."""
 
 
 class CookpalConnectionError(CookpalError):
@@ -35,7 +35,7 @@ def normalize_url(url: str) -> str:
 
 
 class CookpalClient:
-    """Calls one Cookpal server with one api key."""
+    """Calls one CookPal server with one api key."""
 
     def __init__(self, session: aiohttp.ClientSession, url: str, api_key: str) -> None:
         self._session = session

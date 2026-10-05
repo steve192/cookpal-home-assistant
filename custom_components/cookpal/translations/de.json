@@ -2,15 +2,15 @@
   "config": {
     "step": {
       "user": {
-        "title": "Cookpal verbinden",
-        "description": "Erstelle in der Cookpal-App unter Einstellungen > API-Schlüssel einen Schlüssel und kreuze mindestens \"Einkaufslisten lesen\" an. Kreuze auch \"Einträge hinzufügen, abhaken und entfernen\" an, wenn Home Assistant die Liste ändern soll.",
+        "title": "CookPal verbinden",
+        "description": "Erstelle in der CookPal-App unter Einstellungen > API-Schlüssel einen Schlüssel und kreuze mindestens \"Einkaufslisten lesen\" an. Kreuze auch \"Einträge hinzufügen, abhaken und entfernen\" an, wenn Home Assistant die Liste ändern soll.",
         "data": {
           "url": "Server",
           "api_key": "API-Schlüssel"
         },
         "data_description": {
-          "url": "Die Adresse deines Cookpal-Servers. Lass die Vorgabe stehen, außer du betreibst einen eigenen.",
-          "api_key": "Beginnt mit cpk_. Cookpal zeigt ihn nur einmal, direkt nach dem Erstellen."
+          "url": "Die Adresse deines CookPal-Servers. Lass die Vorgabe stehen, außer du betreibst einen eigenen.",
+          "api_key": "Beginnt mit cpk_. CookPal zeigt ihn nur einmal, direkt nach dem Erstellen."
         }
       },
       "lists": {
@@ -21,23 +21,23 @@
         }
       },
       "reauth_confirm": {
-        "title": "Cookpal braucht einen neuen API-Schlüssel",
-        "description": "Der API-Schlüssel für {url} funktioniert nicht mehr: Er wurde widerrufen, oder das Konto kann sich nicht mehr anmelden. Erstelle in der Cookpal-App einen neuen Schlüssel für dasselbe Konto.",
+        "title": "CookPal braucht einen neuen API-Schlüssel",
+        "description": "Der API-Schlüssel für {url} funktioniert nicht mehr: Er wurde widerrufen, oder das Konto kann sich nicht mehr anmelden. Erstelle in der CookPal-App einen neuen Schlüssel für dasselbe Konto.",
         "data": {
           "api_key": "API-Schlüssel"
         }
       }
     },
     "error": {
-      "cannot_connect": "Unter dieser Adresse ist kein Cookpal-Server erreichbar.",
+      "cannot_connect": "Unter dieser Adresse ist kein CookPal-Server erreichbar.",
       "invalid_auth": "Der API-Schlüssel ist ungültig. Vielleicht wurde er widerrufen.",
-      "api_keys_disabled": "Dieser Cookpal-Server nimmt keine API-Schlüssel an.",
+      "api_keys_disabled": "Dieser CookPal-Server nimmt keine API-Schlüssel an.",
       "missing_scope": "Der API-Schlüssel darf keine Einkaufslisten lesen. Erstelle einen mit \"Einkaufslisten lesen\"."
     },
     "abort": {
-      "already_configured": "Dieses Cookpal-Konto ist schon verbunden.",
+      "already_configured": "Dieses CookPal-Konto ist schon verbunden.",
       "reauth_successful": "Der neue API-Schlüssel funktioniert.",
-      "wrong_account": "Dieser API-Schlüssel gehört zu einem anderen Cookpal-Konto."
+      "wrong_account": "Dieser API-Schlüssel gehört zu einem anderen CookPal-Konto."
     }
   },
   "options": {
@@ -51,7 +51,7 @@
       }
     },
     "abort": {
-      "cannot_connect": "Cookpal ist gerade nicht erreichbar, deine Listen konnten nicht gelesen werden. Versuche es später noch einmal."
+      "cannot_connect": "CookPal ist gerade nicht erreichbar, deine Listen konnten nicht gelesen werden. Versuche es später noch einmal."
     }
   },
   "entity": {
@@ -66,18 +66,18 @@
   },
   "exceptions": {
     "auth_failed": {
-      "message": "Cookpal nimmt den API-Schlüssel nicht mehr an. Hinterlege einen neuen, wo Home Assistant danach fragt."
+      "message": "CookPal nimmt den API-Schlüssel nicht mehr an. Hinterlege einen neuen, wo Home Assistant danach fragt."
     },
     "read_only": {
       "message": "Der API-Schlüssel darf diese Liste nur lesen."
     },
     "update_failed": {
-      "message": "Cookpal konnte die Änderung nicht speichern: {error}"
+      "message": "CookPal konnte die Änderung nicht speichern: {error}"
     }
   },
   "issues": {
     "list_gone": {
-      "title": "Eine Cookpal-Einkaufsliste gibt es nicht mehr",
+      "title": "Eine CookPal-Einkaufsliste gibt es nicht mehr",
       "description": "Eine für {entry} gewählte Einkaufsliste wurde gelöscht, oder du hast den Haushalt verlassen, zu dem sie gehörte. Öffne die Optionen der Integration und wähle deine Listen neu."
     }
   }

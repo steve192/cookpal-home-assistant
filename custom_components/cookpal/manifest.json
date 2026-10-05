@@ -1,6 +1,6 @@
 {
   "domain": "cookpal",
-  "name": "Cookpal",
+  "name": "CookPal",
   "codeowners": ["@steve192"],
   "config_flow": true,
   "documentation": "https://github.com/steve192/cookpal-home-assistant",

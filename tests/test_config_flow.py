@@ -30,7 +30,7 @@ async def test_connects_and_suggests_the_own_list(hass: HomeAssistant, aioclient
     )
 
     assert result["type"] is FlowResultType.CREATE_ENTRY
-    assert result["title"] == "Cookpal (Anna)"
+    assert result["title"] == "CookPal (Anna)"
     assert result["data"] == {"url": URL, "api_key": KEY}
     assert result["options"] == {CONF_LISTS: [str(OWN_LIST), str(HOUSEHOLD_LIST)]}
     assert result["result"].unique_id == f"{URL}#{ACCOUNT_ID}"

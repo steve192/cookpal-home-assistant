@@ -1,1 +1,1 @@
-"""Tests for the Cookpal integration."""
+"""Tests for the CookPal integration."""

@@ -1,4 +1,4 @@
-"""A Cookpal server as far as the integration talks to it."""
+"""A CookPal server as far as the integration talks to it."""
 
 from __future__ import annotations
 
@@ -77,7 +77,7 @@ def config_entry() -> MockConfigEntry:
     """An entry showing the own list."""
     return MockConfigEntry(
         domain=DOMAIN,
-        title="Cookpal (Anna)",
+        title="CookPal (Anna)",
         unique_id=f"{URL}#{ACCOUNT_ID}",
         data={"url": URL, "api_key": KEY},
         options={CONF_LISTS: [str(OWN_LIST)]},

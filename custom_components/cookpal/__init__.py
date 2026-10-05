@@ -1,4 +1,4 @@
-"""The Cookpal integration: Cookpal shopping lists as Home Assistant to-do lists."""
+"""The CookPal integration: CookPal shopping lists as Home Assistant to-do lists."""
 
 from __future__ import annotations
 
@@ -59,7 +59,7 @@ async def async_unload_entry(hass: HomeAssistant, entry: CookpalConfigEntry) -> 
 
 
 def _remove_unpicked_lists(hass: HomeAssistant, entry: CookpalConfigEntry, data: CookpalData) -> None:
-    # Otherwise a list unpicked in the options, or deleted in Cookpal, lingers as unavailable.
+    # Otherwise a list unpicked in the options, or deleted in CookPal, lingers as unavailable.
     shown = {f"{entry.unique_id}_{list_id}" for list_id in data.coordinators}
     registry = er.async_get(hass)
     for entity in er.async_entries_for_config_entry(registry, entry.entry_id):
@@ -72,4 +72,4 @@ async def _refresh_unit_words(data: CookpalData) -> None:
     try:
         data.unit_words = {name_key(word) for word in await data.client.get_unit_words()}
     except CookpalError as error:
-        LOGGER.warning("Could not load Cookpal's unit words, adding text unparsed: %s", error)
+        LOGGER.warning("Could not load CookPal's unit words, adding text unparsed: %s", error)

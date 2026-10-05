@@ -1,4 +1,4 @@
-"""Constants for the Cookpal integration."""
+"""Constants for the CookPal integration."""
 
 from datetime import timedelta
 import logging

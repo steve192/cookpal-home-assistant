@@ -1,4 +1,4 @@
-"""Splits typed text into a name and an amount, like the Cookpal app's quick add.
+"""Splits typed text into a name and an amount, like the CookPal app's quick add.
 
 A port of parseQuickAdd in the app (src/helper/shopping/quickAdd.ts); change both together.
 """
